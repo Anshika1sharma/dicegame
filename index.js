@@ -1,60 +1,29 @@
-var dicee = Math.random() * 6;
-var dice = Math.floor(dicee); 
-var final = dice + 1 ;
-
-
-switch (final) {
-  case 1:
-    document.querySelector(".one img").setAttribute("src", "./assets/one.png");
-    break;
-  case 2:
-    document.querySelector(".one img").setAttribute("src", "./assets/two.png");
-    break;
-  case 3:
-    document.querySelector(".one img").setAttribute("src", "./assets/three.png");
-    break;
-  case 4:
-    document.querySelector(".one img").setAttribute("src", "./assets/four.png");
-    break;
-  case 5:
-    document.querySelector(".one img").setAttribute("src", "./assets/five.png");
-    break;
-  case 6:
-    document.querySelector(".one img").setAttribute("src", "./assets/six.png");
-    break;
-}
-
-var diceeTwo = Math.random() * 6;
-var diceTWO = Math.floor(diceeTwo); 
-var finaltwo = diceTWO + 1 ;
-
-switch (finaltwo) {
-  case 1:
-    document.querySelector(".two img").setAttribute("src", "./assets/one.png");
-    break;
-  case 2:
-    document.querySelector(".two img").setAttribute("src", "./assets/two.png");
-    break;
-  case 3:
-    document.querySelector(".two img").setAttribute("src", "./assets/three.png");
-    break;
-  case 4:
-    document.querySelector(".two img").setAttribute("src", "./assets/four.png");
-    break;
-  case 5:
-    document.querySelector(".two img").setAttribute("src", "./assets/five.png");
-    break;
-  case 6:
-    document.querySelector(".two img").setAttribute("src", "./assets/six.png");
-    break;
-}
-
-if(final == finaltwo){
-    document.querySelector("h1").innerHTML="DRAW !";
-}
-else if (final > finaltwo){
-    document.querySelector("h1").innerHTML="PLAYER 1 WINS 🚩";
-}
-else{
-    document.querySelector("h1").innerHTML="PLAYER 2 WINS 🚩";
+function gameStart(){
+    var randomdice1 = Math.floor(Math.random() * 6) + 1;
+    var randomdice2 = Math.floor(Math.random() * 6) + 1;
+    switch(randomdice1){
+        case 1: document.querySelector(".dice1").setAttribute("src","./images/dice1.png");break;
+        case 2: document.querySelector(".dice1").setAttribute("src","./images/dice2.png");break;
+        case 3: document.querySelector(".dice1").setAttribute("src","./images/dice3.png");break;
+        case 4: document.querySelector(".dice1").setAttribute("src","./images/dice4.png");break;
+        case 5: document.querySelector(".dice1").setAttribute("src","./images/dice5.png");break;
+        case 6: document.querySelector(".dice1").setAttribute("src","./images/dice6.png");break;
+    }
+    switch(randomdice2){
+        case 1: document.querySelector(".dice2").setAttribute("src","./images/dice1.png");break;
+        case 2: document.querySelector(".dice2").setAttribute("src","./images/dice2.png");break;
+        case 3: document.querySelector(".dice2").setAttribute("src","./images/dice3.png");break;
+        case 4: document.querySelector(".dice2").setAttribute("src","./images/dice4.png");break;
+        case 5: document.querySelector(".dice2").setAttribute("src","./images/dice5.png");break;
+        case 6: document.querySelector(".dice2").setAttribute("src","./images/dice6.png");break;
+    }
+    if(randomdice1 > randomdice2){
+        document.querySelector("h1").innerHTML="CONGRATULATIONS PLAYER 1 YOU WON ";
+    }
+    else if (randomdice2 > randomdice1){
+        document.querySelector("h1").innerHTML="CONGRATULATIONS PLAYER 2 YOU WON ";
+    }
+    else{
+        document.querySelector("h1").innerHTML="DRAW";
+    }
 }
